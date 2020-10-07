@@ -75,20 +75,6 @@ void DearOldDad(int * PtrBank, int * PtrTurn)
   }
 }
 
-void DepositAmount(int * PtrBank, int * PtrTurn)
-{
-  int balance = rand() % MAX_DEPOSIT_AMOUNT;
-  
-  if ((balance % 2) == 0){
-    *PtrBank += balance;
-    printf("Dear old Dad: Deposits $%d / Balance = $%d\n", balance, *PtrBank);
-  } else {
-    printf("Dear old Dad: Doesn't have any money to give\n");
-  }
-  
-  *PtrTurn = 1;
-}
-
 void PoorStudent(int * PtrBank, int * PtrTurn)
 {
   
@@ -111,4 +97,18 @@ void PoorStudent(int * PtrBank, int * PtrTurn)
     }
     *PtrTurn = 0;
   }
+}
+
+void DepositAmount(int * PtrBank, int * PtrTurn)
+{
+  int balance = rand() % MAX_DEPOSIT_AMOUNT;
+  
+  if ((balance % 2) == 0){
+    *PtrBank += balance;
+    printf("Dear old Dad: Deposits $%d / Balance = $%d\n", balance, *PtrBank);
+  } else {
+    printf("Dear old Dad: Doesn't have any money to give\n");
+  }
+  
+  *PtrTurn = 1;
 }
